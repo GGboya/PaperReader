@@ -158,6 +158,15 @@ function prepare() {
     // Declare an independent Yarn project even when a parent temp directory has a manifest.
     if (!existsSync(join(packageRoot, 'yarn.lock'))) writeFileSync(join(packageRoot, 'yarn.lock'), '')
     const { sourceVersion } = patchManifest(packageRoot, peerRanges)
+    // LOCAL BUILD TWEAK (do not commit): npmmirror lacks @dataiku platform binaries; pin that
+    // scope to the official registry while YARN_NPM_REGISTRY_SERVER can point the rest at npmmirror.
+    if (process.env.DSH_AA_MIRROR_INSTALL === '1') {
+      const rcPath = join(packageRoot, '.yarnrc.yml')
+      const rcBase = existsSync(rcPath) ? readFileSync(rcPath, 'utf8') : ''
+      if (!rcBase.includes('dataiku')) {
+        writeFileSync(rcPath, `${rcBase}\nnpmScopes:\n  dataiku:\n    npmRegistryServer: "https://registry.npmjs.org"\n`)
+      }
+    }
     run('corepack', ['yarn', 'install', '--mode=skip-build'], packageRoot)
     run('corepack', ['yarn', 'build'], packageRoot)
     run('corepack', ['yarn', 'typecheck'], packageRoot)

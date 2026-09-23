@@ -27,7 +27,7 @@ It is not written from scratch — **PaperReader = [DSH Desktop](https://github.
 | Platform | Download | How to install |
 | --- | --- | --- |
 | macOS Universal (Intel + Apple Silicon) | [Download DMG](https://github.com/GGboya/PaperReader/releases/latest/download/PaperReader-0.1.0-universal.dmg) | Open the DMG, drag PaperReader into Applications |
-| Windows | Coming soon | — |
+| Windows x64 | [Installer](https://github.com/GGboya/PaperReader/releases/latest/download/PaperReader-0.1.0-x64-Setup.exe) / [Portable](https://github.com/GGboya/PaperReader/releases/latest/download/PaperReader-0.1.0-x64-Portable.zip) | Run the installer, or unzip the portable archive anywhere and launch `PaperReader.exe` |
 
 Two things to know:
 

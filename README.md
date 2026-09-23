@@ -14,6 +14,7 @@
   <a href="https://github.com/GGboya/PaperReader/releases/latest"><img src="https://img.shields.io/github/v/release/GGboya/PaperReader?style=flat&label=release&color=4D6BFE" alt="Latest release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2EA44F?style=flat" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/macOS-Universal-4493F8?style=flat-square" alt="macOS Universal">
+  <img src="https://img.shields.io/badge/Windows-x64-0078D4?style=flat-square" alt="Windows x64">
 </p>
 
 ## 这是什么
@@ -27,7 +28,7 @@ PaperReader 是一个开箱即用的论文阅读桌面应用：左边文献库�
 | 平台 | 下载 | 安装方式 |
 | --- | --- | --- |
 | macOS Universal（Intel + Apple Silicon） | [下载 DMG](https://github.com/GGboya/PaperReader/releases/latest/download/PaperReader-0.1.0-universal.dmg) | 打开 DMG，把 PaperReader 拖进「应用程序」 |
-| Windows | 打包中，敬请期待 | — |
+| Windows x64 | [下载安装包](https://github.com/GGboya/PaperReader/releases/latest/download/PaperReader-0.1.0-x64-Setup.exe) / [便携版](https://github.com/GGboya/PaperReader/releases/latest/download/PaperReader-0.1.0-x64-Portable.zip) | 安装包双击运行；便携版解压到任意目录，运行 `PaperReader.exe` |
 
 两点说明：
 
