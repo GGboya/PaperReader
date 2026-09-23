@@ -3,16 +3,16 @@ export const DESKTOP_RELEASE_IDENTITIES = Object.freeze({
   stable: Object.freeze({
     releaseChannel: 'stable' as const,
     packageName: 'dsh-plugin-desktop',
-    productName: 'DSH Desktop',
-    appId: 'ai.deepseek.dsh.desktop',
-    homeDirectoryName: '.dsh',
+    productName: 'PaperReader',
+    appId: 'com.ggboya.paperreader',
+    homeDirectoryName: '.paperreader',
   }),
   beta: Object.freeze({
     releaseChannel: 'beta' as const,
     packageName: 'dsh-plugin-desktop-beta',
-    productName: 'DSH Desktop Beta',
-    appId: 'ai.deepseek.dsh.desktop.beta',
-    homeDirectoryName: '.dsh-beta',
+    productName: 'PaperReader Beta',
+    appId: 'com.ggboya.paperreader.beta',
+    homeDirectoryName: '.paperreader-beta',
   }),
 })
 

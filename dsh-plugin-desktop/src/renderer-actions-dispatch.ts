@@ -7,7 +7,7 @@
  * exited, hung, or never booted cannot take these operations down with it.
  */
 export interface DesktopRendererActionHandlers {
-  /** Open the already-configured DSH Desktop terminal for the active profile. */
+  /** Open the already-configured PaperReader terminal for the active profile. */
   openTerminal(): void
   /** Request one confirmed, orderly Electron relaunch. */
   restart(): Promise<void>

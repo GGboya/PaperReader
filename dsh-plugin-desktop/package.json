@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-desktop",
-  "version": "2.0.13",
-  "description": "DSH Desktop: an Electron shell composed as a DeepSeek Harness Cordis plugin",
+  "version": "0.1.0",
+  "description": "PaperReader: paper reading companion desktop app (fork of DSH Desktop)",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -327,8 +327,8 @@
     "vitest": "4.1.8"
   },
   "build": {
-    "appId": "ai.deepseek.dsh.desktop",
-    "productName": "DSH Desktop",
+    "appId": "com.ggboya.paperreader",
+    "productName": "PaperReader",
     "asar": false,
     "afterPack": "./scripts/verify-packaged-runtime.ts",
     "afterAllArtifactBuild": "./scripts/verify-electron-fuses.ts",
@@ -373,7 +373,7 @@
       "hardenedRuntime": true,
       "icon": "build/app-icon-mac.png",
       "mergeASARs": false,
-      "notarize": true,
+      "notarize": false,
       "signIgnore": [
         "\\.(?:pak|dat|wasm)$"
       ],
@@ -391,7 +391,7 @@
           ]
         }
       ],
-      "artifactName": "DSH-Desktop-${version}-${arch}-Portable.${ext}",
+      "artifactName": "PaperReader-${version}-${arch}-Portable.${ext}",
       "icon": "build/app-icon.ico"
     },
     "nsis": {
@@ -405,10 +405,10 @@
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "differentialPackage": false,
-      "shortcutName": "DSH Desktop",
+      "shortcutName": "PaperReader",
       "uninstallerIcon": "build/app-icon.ico",
       "useZip": false,
-      "artifactName": "DSH-Desktop-${version}-${arch}-Setup.${ext}"
+      "artifactName": "PaperReader-${version}-${arch}-Setup.${ext}"
     },
     "linux": {
       "target": [

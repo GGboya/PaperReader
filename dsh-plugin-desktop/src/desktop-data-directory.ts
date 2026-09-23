@@ -386,7 +386,7 @@ export function assertDesktopDataDirectoryCommandGeneration(
   }
   throw new DesktopDataDirectoryError(
     'busy',
-    'this managed terminal belongs to an older DSH data directory; reopen it from DSH Desktop',
+    'this managed terminal belongs to an older DSH data directory; reopen it from PaperReader',
   )
 }
 

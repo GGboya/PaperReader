@@ -1,4 +1,4 @@
-/** Private installation identity used only by DSH Desktop update checks. */
+/** Private installation identity used only by PaperReader update checks. */
 
 import { randomUUID } from 'node:crypto'
 import { chmod, lstat, mkdir, open } from 'node:fs/promises'
