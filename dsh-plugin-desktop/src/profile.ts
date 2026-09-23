@@ -80,12 +80,12 @@ export const DESKTOP_PROFILE_ROOT = 'cordis.yml'
 const AA_PACKAGE_NAME = '@agents-anywhere/dsh-bridge-next'
 const AA_ROW_ID = 'agents-anywhere-bridge-next'
 const BIN_NAME = DESKTOP_PACKAGE_NAME
-// PaperReader fork: plugins every fresh desktop profile starts with, pinned
-// exact so first-boot composition installs a known-good build. Users can still
-// remove them later (they persist as ordinary third-party bundles).
-const PREINSTALLED_PLUGINS: Record<string, string> = {
-  '@ggboy123/dsh-paper-reader': '1.1.0',
-}
+// PaperReader fork: plugins every fresh desktop profile starts with. The
+// packages ship inside the Desktop installation (dependencies of this
+// package), so the Loader resolves them without a profile-local install.
+const PREINSTALLED_PLUGINS: readonly string[] = [
+  '@ggboy123/dsh-paper-reader',
+]
 const REQUIRED_BUNDLES = requiredWebBundles()
 const REQUIRED_BUNDLE_SET = new Set(REQUIRED_BUNDLES)
 const OBSOLETE_DESKTOP_BUNDLE_SET = new Set(['@deepseek-ai/dsh-desktop-app'])
@@ -351,24 +351,17 @@ export function ensureDesktopProfile(home: string = resolveDshHome()): string {
   }
   const current = rawBundles === undefined ? [] : rawBundles as string[]
   // PaperReader fork: seed preinstalled plugins as ordinary third-party bundles
-  // (they stay user-removable; the manifest write below persists both shapes).
+  // (user-removable). They resolve from the Desktop installation itself —
+  // the packages are dependencies of dsh-plugin-desktop — so a fresh profile
+  // needs no pnpm install before the Loader can compose them.
   const bundles = [...desktopBundleList(current)]
-  for (const name of Object.keys(PREINSTALLED_PLUGINS)) {
+  for (const name of PREINSTALLED_PLUGINS) {
     if (!bundles.includes(name)) bundles.push(name)
   }
-  const dependencies: Record<string, string> = { ...(manifest.dependencies as Record<string, string> | undefined) }
-  let dependenciesChanged = false
-  for (const [name, version] of Object.entries(PREINSTALLED_PLUGINS)) {
-    if (dependencies[name] !== version) {
-      dependencies[name] = version
-      dependenciesChanged = true
-    }
-  }
   const patchReload = requiredWebPatchReload()
-  if (!sameList(current, bundles) || dependenciesChanged || manifest.dsh?.profile?.patchReload !== patchReload) {
+  if (!sameList(current, bundles) || manifest.dsh?.profile?.patchReload !== patchReload) {
     writeProfileManifest(dir, {
       ...manifest,
-      dependencies,
       dsh: {
         ...manifest.dsh,
         profile: {
