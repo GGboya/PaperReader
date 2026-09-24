@@ -9638,6 +9638,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ggboy123/dsh-paper-reader@patch:@ggboy123/dsh-paper-reader@npm%3A1.1.0#~/.yarn/patches/@ggboy123-dsh-paper-reader-npm-1.1.0-8a326cdf4d.patch":
+  version: 1.1.0
+  resolution: "@ggboy123/dsh-paper-reader@patch:@ggboy123/dsh-paper-reader@npm%3A1.1.0#~/.yarn/patches/@ggboy123-dsh-paper-reader-npm-1.1.0-8a326cdf4d.patch::version=1.1.0&hash=f216f5"
+  dependencies:
+    "@typesafe-ai/sdk": "npm:^0.6.0"
+    pdfjs-dist: "npm:^6.3.289"
+    undici: "npm:^8.10.2"
+  peerDependencies:
+    "@deepseek-ai/cordis": ^4.0.2
+    "@deepseek-ai/dsh-tools": ">=0.1.5-rc.1 <0.2.0-0"
+  checksum: 10c0/ecbccf413d653033e340ee275a9a36021bdb014c088d291c2deecb5a5fad6c3a5eb80d79e302499b284ec3779a505f53a5069c4176b31719b669a02970b64a54
+  languageName: node
+  linkType: hard
+
 "@google/genai@npm:1.52.0":
   version: 1.52.0
   resolution: "@google/genai@npm:1.52.0"
@@ -13780,7 +13794,7 @@ __metadata:
     "@electron/asar": "npm:3.4.1"
     "@electron/fuses": "npm:1.8.0"
     "@fontsource-variable/inter": "npm:^5.3.0"
-    "@ggboy123/dsh-paper-reader": "npm:1.1.0"
+    "@ggboy123/dsh-paper-reader": "patch:@ggboy123/dsh-paper-reader@npm%3A1.1.0#~/.yarn/patches/@ggboy123-dsh-paper-reader-npm-1.1.0-8a326cdf4d.patch"
     "@tailwindcss/vite": "npm:^4"
     "@types/js-yaml": "npm:^4.0.9"
     "@types/mdast": "npm:^4.0.4"
