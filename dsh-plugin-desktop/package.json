@@ -277,7 +277,7 @@
     "@deepseek-ai/dsh-workflow": "0.1.5-rc.2",
     "@deepseek-ai/dsh-workspace": "0.1.5-rc.2",
     "@deepseek-ai/schemastery": "^3.18.2",
-    "@ggboy123/dsh-paper-reader": "patch:@ggboy123/dsh-paper-reader@npm%3A1.1.0#~/.yarn/patches/@ggboy123-dsh-paper-reader-npm-1.1.0-8a326cdf4d.patch",
+    "@ggboy123/dsh-paper-reader": "file:../vendor/paper-reader/1.1.1/ggboy123-dsh-paper-reader-1.1.1.tgz",
     "adm-zip": "^0.6.0",
     "dsh-community-market": "0.1.0-dev.0",
     "dshmarket": "1.38.1",
